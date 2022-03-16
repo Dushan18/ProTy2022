@@ -216,8 +216,8 @@ function ModificarCantidad(listaPro:Producto[], nombre_Producto:string, operacio
     console.log("Se incremento la  cantidad")
   }
   else if (operacion=="disminuir"){
-    
-    if (cantidad>listaPro[RetornarProducto(listaPro,nombre_Producto)].cantidad_Producto){
+    var aea: number = listaPro[RetornarProducto(listaPro,nombre_Producto)].cantidad_Producto-cantidad 
+    if (aea<0){
       console.log("La cantidad no se puede restar")
     }
     listaPro[RetornarProducto(listaPro, nombre_Producto)].cantidad_Producto -= cantidad
@@ -228,3 +228,7 @@ function ModificarCantidad(listaPro:Producto[], nombre_Producto:string, operacio
     console.log("No existe operacion")
   }
 }
+ModificarCantidad(producto,"vino","añadir",50)
+MostrarP(almacen)
+MostrarP(producto)
+
